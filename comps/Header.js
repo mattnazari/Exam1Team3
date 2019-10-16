@@ -10,25 +10,30 @@ function Header() {
   if (inputStatus == true) {
     showInputText = (
       <TextInput
-      onChangeText={txt => {
-        SetTitleTxt(txt);
-      }}
-      value={titleTxt}
-      placeholder="The Story of My Life"
+        onChangeText={txt => {
+          SetTitleTxt(txt);
+        }}
+        value={titleTxt}
+        placeholder="The Story of My Life"
       />
     );
   } else {
-    howInputText = null;
+    showInputText = null;
   }
+
   return (
-    {titleTxt}
-    <Button
-    title='Edit'
-    onPress={() => {
-      SetInputStatus(!inputStatus);
-    }}
-    />
-    {showInputText}
+    <View style={styles.bg}>
+      <View style={styles.rowContainer}>
+        <Text style={styles.headerTxt}>{titleTxt}</Text>
+        <Button
+          title="Edit"
+          onPress={() => {
+            SetInputStatus(!inputStatus);
+          }}
+        />
+      </View>
+      {showInputText}
+    </View>
   );
 }
 
