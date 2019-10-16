@@ -4,8 +4,11 @@ var styles = StyleSheet.create ({
 
     menu: {
         backgroundColor:'#8888ae',
-        top:0,
-        padding:10
+        position:'absolute',
+        left:0,
+        padding:10,
+        width: 40,
+        height:'100%'
     },
 
     buttons: {
