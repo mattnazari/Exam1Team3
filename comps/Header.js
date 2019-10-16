@@ -1,29 +1,40 @@
 import React, {useState} from 'react';
 import {View, Text, Button, TextInput} from 'react-native';
-import styles from '../styles/HeaderStyles'
+import styles from '../styles/HeaderStyles';
 
-function Header(){
-  const [text, setText] = useState("");
-  const [title, setTitle] = useState("A New Title");
+function Header() {
+const [titleTxt, SetTitleTxt] = useState('The Story of My Life');
+const [inputStatus, SetInputStatus] = useState(false);
 
-  return(
-    <View style={styles.header}>
-      <Text style={{fontSize:30}}>{title}</Text>
-      <TextInput
-        placeholder="new title"
-        onChangeText={text => setText(text)}
-        value={text}
-      />
-      <Button
-      style={styles.button}
-      title="edit"
-      onPress={()=>{
-        setTitle(text);
-      }}
-      />
-    </View>
+var showInputText = null;
+if (inputStatus == true) {
+showInputText = (
+<TextInput
+onChangeText={txt => {
+SetTitleTxt(txt);
+}}
+value={titleTxt}
+placeholder="The Story of My Life"
+/>
+);
+} else {
+showInputText = null;
+}
 
-  )
+return (
+
+
+{titleTxt}
+<Button
+  title='Edit'
+  onPress={() => {
+  SetInputStatus(!inputStatus);
+  }}
+/>
+
+{showInputText}
+
+);
 }
 
 export default Header;
