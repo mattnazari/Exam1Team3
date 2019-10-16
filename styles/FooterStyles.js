@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
     titleText: {
         flexDirection:"row",
-        fontSize: 30,
+        fontSize: 24,
         fontWeight: 'bold',
         fontStyle:'italic',
         paddingTop:15,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
       },
 
     byText: {
-        fontSize: 10,
+        fontSize: 16,
         fontWeight: '100',
       },
     
